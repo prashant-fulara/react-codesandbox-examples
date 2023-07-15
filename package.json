@@ -8,6 +8,7 @@
     "react-scripts": "^1.0.0"
   },
   "name": "z59pcp",
+  "description": null,
   "version": "0.0.10",
   "scripts": {
     "start": "react-scripts start",
@@ -20,8 +21,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  ]
 }
