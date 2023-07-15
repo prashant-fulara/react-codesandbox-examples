@@ -21,6 +21,7 @@ export default function TaskList({ toDos, onDeleteTodo, onChangeTodo }) {
 
 function Task({ todo, onDeleteTodo, onChangeTodo }) {
   const [isEditing, setIsEditing] = useState(false);
+  const [localTodo, setLocalTodo] = useState({});
   let todoContent;
 
   if (isEditing) {
@@ -28,11 +29,17 @@ function Task({ todo, onDeleteTodo, onChangeTodo }) {
       <React.Fragment>
         <lable className="beautify">{todo.title}</lable>
         <input
-          onChange={(e) => onChangeTodo({ ...todo, title: e.target.value })}
+          onChange={(e) => setLocalTodo({ ...todo, title: e.target.value })}
           placeholder={todo.title}
-          className="beautify"
+          className="beautifyTextField"
         />
-        <button onClick={() => setIsEditing(false)} className="beautifyBttn">
+        <button
+          onClick={() => {
+            onChangeTodo(localTodo);
+            setIsEditing(false);
+          }}
+          className="beautifyBttn"
+        >
           Save
         </button>
       </React.Fragment>
