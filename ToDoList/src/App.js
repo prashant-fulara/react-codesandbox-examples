@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import AddToDo from "./AddToDo";
 import TaskList from "./TaskList";
@@ -36,13 +37,13 @@ export default function App() {
   }
 
   return (
-    <>
+    <React.Fragment>
       <AddToDo onAddToDo={handleAddToDo} />
       <TaskList
         toDos={toDos}
         onDeleteTodo={handleDeleteToDo}
         onChangeTodo={handleChangeToDo}
       />
-    </>
+    </React.Fragment>
   );
 }
