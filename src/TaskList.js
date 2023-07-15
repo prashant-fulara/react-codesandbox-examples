@@ -25,27 +25,34 @@ function Task({ todo, onDeleteTodo, onChangeTodo }) {
   if (isEditing) {
     todoContent = (
       <>
-        {todo.title}
+        <lable className="beautify">{todo.title}</lable>
         <input
           onChange={(e) => onChangeTodo({ ...todo, title: e.target.value })}
           placeholder={todo.title}
+          className="beautify"
         />
-        <button onClick={() => setIsEditing(false)}>Save</button>
+        <button onClick={() => setIsEditing(false)} className="beautifyBttn">
+          Save
+        </button>
       </>
     );
   } else {
     todoContent = (
       <>
-        {todo.title}
-        <button onClick={() => setIsEditing(true)}>Edit</button>
+        <label className="beautify">{todo.title}</label>
+        <button onClick={() => setIsEditing(true)} className="beautifyBttn">
+          Edit
+        </button>
       </>
     );
   }
   return (
     <>
-      <input type="checkbox" value={todo.done} />
+      <input type="checkbox" value={todo.done} className="beautify" />
       {todoContent}
-      <button onClick={() => onDeleteTodo(todo.id)}>Delete</button>
+      <button onClick={() => onDeleteTodo(todo.id)} className="beautifyBttn">
+        Delete
+      </button>
     </>
   );
 }
