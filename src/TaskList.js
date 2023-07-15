@@ -1,43 +1,35 @@
+import { useState } from "react";
 
-export default function TaskList({toDos, onDeleteTodo}) {
+export default function TaskList({ toDos, onDeleteTodo }) {
   return (
     <>
       <ul>
-        {
-          toDos.map(todo => (
-            <li key={todo.id}>
-              <Task todo={todo} onDeleteTodo={onDeleteTodo} />
-            </li>
-          ))
-        }
+        {toDos.map((todo) => (
+          <li key={todo.id}>
+            <Task todo={todo} onDeleteTodo={onDeleteTodo} />
+          </li>
+        ))}
       </ul>
     </>
-  )
+  );
 }
 
-function Task({todo, onDeleteTodo}) {
+function Task({ todo, onDeleteTodo }) {
+  const [isEditing, setIsEditing] = useState(false);
   let todoContent;
 
   todoContent = (
     <>
       {todo.title}
-      <button>
-        Edit
-      </button>
+      <button>Edit</button>
     </>
-  )
-  
+  );
+
   return (
     <>
-      <input
-      type = "checkbox"
-      value = {todo.done}
-      />
+      <input type="checkbox" value={todo.done} />
       {todoContent}
-      <button
-      onClick = {() => onDeleteTodo(todo.id)}>
-        Delete
-      </button>
+      <button onClick={() => onDeleteTodo(todo.id)}>Delete</button>
     </>
-  )
+  );
 }
