@@ -3,16 +3,16 @@ import Section from "./Section";
 
 export default function HeadingsPage({ children }) {
   return (
-    <Section level={1}>
+    <Section>
       <Heading>Heading</Heading>
-      <Section level={2}>
+      <Section>
         <Heading>Sub Heading</Heading>
         <Heading>Sub Heading</Heading>
-        <Section level={3}>
+        <Section>
           <Heading>Sub Sub Heading</Heading>
           <Heading>Sub Sub Heading</Heading>
           <Heading>Sub Sub Heading</Heading>
-          <Section level={4}>
+          <Section>
             <Heading>Sub Sub Sub Heading</Heading>
             <Heading>Sub Sub Sub Heading</Heading>
             <Heading>Sub Sub Sub Heading</Heading>
