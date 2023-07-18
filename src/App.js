@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import AddToDo from "./components/ToDoList/AddToDo";
 import TaskList from "./components/ToDoList//TaskList";
+import HeadingsPage from "./components/Headings/HeadingsPage";
 
 import { Box, Tab, Tabs, Typography } from "@mui/material";
 
@@ -54,7 +55,7 @@ export default function App() {
           sx={{ width: 550 }}
         >
           <Tab label="ToDo List" />
-          <Tab label="Tab 2" />
+          <Tab label="Headings" />
           <Tab label="Tab 3" />
           <Tab label="Tab 4" />
           <Tab label="Tab 5" />
@@ -75,7 +76,7 @@ export default function App() {
         )}
         {tabIndex === 1 && (
           <Box>
-            <Typography>The second tab</Typography>
+            <HeadingsPage />
           </Box>
         )}
         {tabIndex === 2 && (
