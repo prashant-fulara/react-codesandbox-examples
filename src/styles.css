@@ -77,3 +77,12 @@ ul {
   color: rgb(214, 119, 10);
   background-color: rgba(176, 215, 216, 0.866);
 }
+
+.section {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+  font: 12px Georgia, serif;
+  color: rgba(187, 131, 19, 0.892);
+}
