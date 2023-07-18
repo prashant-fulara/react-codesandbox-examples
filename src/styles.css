@@ -86,3 +86,7 @@ ul {
   font: 12px Georgia, serif;
   color: rgba(187, 131, 19, 0.892);
 }
+
+.fancy {
+  border: 4px dashed pink;
+}
