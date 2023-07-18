@@ -3,6 +3,7 @@ import { useState } from "react";
 import AddToDo from "./components/ToDoList/AddToDo";
 import TaskList from "./components/ToDoList//TaskList";
 import HeadingsPage from "./components/Headings/HeadingsPage";
+import ProfilePage from "./components/Profile/ProfilePage";
 
 import { Box, Tab, Tabs, Typography } from "@mui/material";
 
@@ -56,7 +57,7 @@ export default function App() {
         >
           <Tab label="ToDo List" />
           <Tab label="Headings" />
-          <Tab label="Tab 3" />
+          <Tab label="Profile" />
           <Tab label="Tab 4" />
           <Tab label="Tab 5" />
           <Tab label="Tab 6" />
@@ -81,7 +82,7 @@ export default function App() {
         )}
         {tabIndex === 2 && (
           <Box>
-            <Typography>The third tab</Typography>
+            <ProfilePage />
           </Box>
         )}
       </Box>
