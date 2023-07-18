@@ -9,13 +9,13 @@ import { Box, Tab, Tabs, Typography } from "@mui/material";
 let nextId = 3;
 
 export default function App() {
-  const [tabIndex, setTabIndex] = useState(0);
   const [toDos, setToDos] = useState([
     { id: 0, title: "Buy Milk", done: true },
     { id: 1, title: "Park Walk", done: false },
     { id: 2, title: "Eat Fruits", done: false },
   ]);
 
+  const [tabIndex, setTabIndex] = useState(0);
   const handleTabChange = (event, newTabIndex) => {
     setTabIndex(newTabIndex);
   };
@@ -38,7 +38,7 @@ export default function App() {
   function handleChangeToDo(changedTodo) {
     setToDos(
       toDos.map((todo) => {
-        if (todo.id === changedTodo.id) return changedTodo;
+        if (todo.id == changedTodo.id) return changedTodo;
         else return todo;
       })
     );
