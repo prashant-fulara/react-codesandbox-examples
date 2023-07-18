@@ -35,7 +35,7 @@ function Task({ todo, onDeleteTodo, onChangeTodo }) {
         />
         <button
           onClick={() => {
-            onChangeTodo(todo);
+            onChangeTodo(localTodo);
             setIsEditing(false);
           }}
           className="beautifyBttn"
