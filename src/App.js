@@ -1,20 +1,21 @@
 import React from "react";
 import { useState } from "react";
+import { useReducer } from "react";
 import AddToDo from "./components/ToDoList/AddToDo";
 import TaskList from "./components/ToDoList//TaskList";
 import HeadingsPage from "./components/Headings/HeadingsPage";
 import ProfilePage from "./components/Profile/ProfilePage";
-
+import { initialTasks } from "./components/ToDoList/data/data";
+import TaskReducer from "./components/ToDoList/reducers/TaskReducer";
 import { Box, Tab, Tabs, Typography } from "@mui/material";
 
 let nextId = 3;
 
 export default function App() {
-  const [toDos, setToDos] = useState([
-    { id: 0, title: "Buy Milk", done: true },
-    { id: 1, title: "Park Walk", done: false },
-    { id: 2, title: "Eat Fruits", done: false },
-  ]);
+  const [tasks, dispatch] = useReducer(TaskReducer, initialTasks);
+
+  //using reducer instead of useState
+  // const [toDos, setToDos] = useState(initialTasks);
 
   const [tabIndex, setTabIndex] = useState(0);
   const handleTabChange = (event, newTabIndex) => {
@@ -22,27 +23,25 @@ export default function App() {
   };
 
   function handleAddToDo(title) {
-    setToDos([
-      ...toDos,
-      {
-        id: nextId++,
-        title: title,
-        done: false,
-      },
-    ]);
+    dispatch({
+      type: "added",
+      title: title,
+      id: nextId++,
+    });
   }
 
-  function handleDeleteToDo(todoId) {
-    setToDos(toDos.filter((todo) => todo.id !== todoId));
+  function handleDeleteToDo(taskId) {
+    dispatch({
+      type: "deleted",
+      id: taskId,
+    });
   }
 
-  function handleChangeToDo(changedTodo) {
-    setToDos(
-      toDos.map((todo) => {
-        if (todo.id == changedTodo.id) return changedTodo;
-        else return todo;
-      })
-    );
+  function handleChangeToDo(changedTask) {
+    dispatch({
+      type: "changed",
+      task: changedTask,
+    });
   }
 
   return (
@@ -69,7 +68,7 @@ export default function App() {
           <Box>
             <AddToDo onAddToDo={handleAddToDo} />
             <TaskList
-              toDos={toDos}
+              toDos={tasks}
               onDeleteTodo={handleDeleteToDo}
               onChangeTodo={handleChangeToDo}
             />
