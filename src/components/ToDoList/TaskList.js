@@ -21,7 +21,7 @@ export default function TaskList({ toDos, onDeleteTodo, onChangeTodo }) {
 
 function Task({ todo, onDeleteTodo, onChangeTodo }) {
   const [isEditing, setIsEditing] = useState(false);
-  const [localTodo, setLocalTodo] = useState({});
+  const [localTodo, setLocalTodo] = useState(todo);
   let todoContent;
 
   if (isEditing) {
@@ -29,7 +29,9 @@ function Task({ todo, onDeleteTodo, onChangeTodo }) {
       <React.Fragment>
         <lable className="beautify">{todo.title}</lable>
         <input
-          onChange={(e) => setLocalTodo({ ...todo, title: e.target.value })}
+          onChange={(e) =>
+            setLocalTodo({ ...localTodo, title: e.target.value })
+          }
           placeholder={todo.title}
           className="beautifyTextField"
         />
