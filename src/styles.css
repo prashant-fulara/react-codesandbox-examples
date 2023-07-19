@@ -47,9 +47,9 @@ ul {
 }
 
 button {
-  margin: 4px;
+  margin: 5px;
   font-size: 0.9em;
-  font-weight: 550;
+  font-weight: 450;
   width: 25%;
   border: hidden;
   border-radius: 5px;
@@ -58,7 +58,7 @@ button {
 }
 
 input[type="checkbox"] {
-  margin: 2px;
+  margin: 4px;
   width: 4%;
   color: rgb(62, 71, 202);
   background-color: white;
@@ -85,6 +85,17 @@ input[type="checkbox"] {
   border-radius: 5px;
   color: rgb(62, 71, 202);
   background-color: rgba(167, 234, 85, 0.873);
+}
+
+.beautifySelectedBttn {
+  margin: 5px;
+  padding: 5px;
+  font-size: 0.8em;
+  font-weight: 550;
+  border: hidden;
+  border-radius: 5px;
+  color: rgb(220, 58, 13);
+  background-color: rgba(158, 177, 226, 0.873);
 }
 
 .beautifyTextField {

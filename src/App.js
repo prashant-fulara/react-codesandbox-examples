@@ -64,7 +64,7 @@ export default function App() {
           <Tab label="Tab 7" />
         </Tabs>
       </Box>
-      <Box sx={{ padding: 2 }}>
+      <Box sx={{ padding: 1 }}>
         {tabIndex === 0 && (
           <Box>
             <AddToDo onAddToDo={handleAddToDo} />
