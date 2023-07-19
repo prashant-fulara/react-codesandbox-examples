@@ -4,13 +4,13 @@
 
 body {
   font-family: sans-serif;
-  margin: 20px;
+  margin: 10px;
   padding: 0;
 }
 
 h1 {
   margin-top: 0;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 h2 {
@@ -43,7 +43,25 @@ code {
 }
 
 ul {
-  padding-left: 20px;
+  padding-left: 15px;
+}
+
+button {
+  margin: 4px;
+  font-size: 0.9em;
+  font-weight: 550;
+  width: 25%;
+  border: hidden;
+  border-radius: 5px;
+  color: rgb(62, 71, 202);
+  background-color: rgba(254, 167, 113, 0.873);
+}
+
+input[type="checkbox"] {
+  margin: 2px;
+  width: 4%;
+  color: rgb(62, 71, 202);
+  background-color: white;
 }
 
 .avatar {
@@ -51,9 +69,10 @@ ul {
 }
 
 .beautify {
-  margin: 5px;
+  margin: 10px;
   font-size: 0.9em;
-  width: 2%;
+  width: 20%;
+  line-height: 14px;
   color: rgb(163, 22, 12);
 }
 
@@ -63,7 +82,7 @@ ul {
   font-weight: 550;
   width: 15%;
   border: hidden;
-  border-radius: 10px;
+  border-radius: 5px;
   color: rgb(62, 71, 202);
   background-color: rgba(167, 234, 85, 0.873);
 }
@@ -71,11 +90,11 @@ ul {
 .beautifyTextField {
   margin: 5px;
   font-size: 0.9em;
-  width: 20%;
+  width: 35%;
   border: hidden;
   border-radius: 4px;
   color: rgb(214, 119, 10);
-  background-color: rgba(176, 215, 216, 0.866);
+  background-color: rgba(235, 247, 250, 0.866);
 }
 
 .section {
@@ -89,4 +108,36 @@ ul {
 
 .fancy {
   border: 4px dashed pink;
+}
+
+.chat,
+.contact-list {
+  float: left;
+  margin-bottom: 20px;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 1px;
+  padding: 1px;
+}
+li button {
+  width: 50px;
+  padding: 5px;
+  margin-right: 5px;
+}
+textarea {
+  height: 150px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: rgb(214, 231, 254);
+  text-align: center;
+  line-height: 14px;
+  font-size: 14px;
+  margin: 2px;
+  width: 75%;
 }

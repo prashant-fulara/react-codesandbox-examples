@@ -8,6 +8,7 @@ import ProfilePage from "./components/Profile/ProfilePage";
 import { initialTasks } from "./components/ToDoList/data/data";
 import TaskReducer from "./components/ToDoList/reducers/TaskReducer";
 import { Box, Tab, Tabs, Typography } from "@mui/material";
+import ChatPage from "./components/Chat/ChatPage";
 
 let nextId = 3;
 
@@ -57,7 +58,7 @@ export default function App() {
           <Tab label="ToDo List" />
           <Tab label="Headings" />
           <Tab label="Profile" />
-          <Tab label="Tab 4" />
+          <Tab label="Chat" />
           <Tab label="Tab 5" />
           <Tab label="Tab 6" />
           <Tab label="Tab 7" />
@@ -82,6 +83,11 @@ export default function App() {
         {tabIndex === 2 && (
           <Box>
             <ProfilePage />
+          </Box>
+        )}
+        {tabIndex === 3 && (
+          <Box>
+            <ChatPage />
           </Box>
         )}
       </Box>
