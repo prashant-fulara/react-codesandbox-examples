@@ -58,7 +58,7 @@ function Task({ todo, onDeleteTodo, onChangeTodo }) {
   }
   return (
     <React.Fragment>
-      <input type="checkbox" value={todo.done} className="beautify" />
+      <input type="checkbox" value={todo.done} />
       {todoContent}
       <button onClick={() => onDeleteTodo(todo.id)} className="beautifyBttn">
         Delete
