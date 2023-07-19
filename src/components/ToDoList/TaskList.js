@@ -6,7 +6,7 @@ export default function TaskList({ toDos, onDeleteTodo, onChangeTodo }) {
     <React.Fragment>
       <ul>
         {toDos.map((todo) => (
-          <li key={todo.id}>
+          <li key={todo.id} className="flex-container">
             <Task
               todo={todo}
               onDeleteTodo={onDeleteTodo}
