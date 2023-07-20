@@ -1,22 +1,19 @@
-import { useReducer } from "react";
 import ContactList from "./ContactList";
 import { initialState } from "./data/data";
-import messageReducer from "./reducers/MessageReducer";
-import { contacts } from "./data/data";
 import Chat from "./Chat";
+import MessageProvider from "./providers/MessageProvider";
+import { useStates, useContacts } from "./providers/MessageProvider";
 
 export default function ChatPage() {
-  const [state, dispatch] = useReducer(messageReducer, initialState);
-  const contact = contacts.find((c) => c.id === state.selectedId);
+  const state = useStates();
+  const contacts = useContacts();
 
   return (
     <>
-      <ContactList
-        contacts={contacts}
-        dispatch={dispatch}
-        selectedId={state.selectedId}
-      />
-      <Chat message={state.message} contact={contact} dispatch={dispatch} />
+      <MessageProvider>
+        <ContactList />
+        <Chat />
+      </MessageProvider>
     </>
   );
 }

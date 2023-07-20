@@ -1,4 +1,14 @@
-export default function ContactList({ contacts, dispatch, selectedId }) {
+import {
+  useContacts,
+  useStateDispatch,
+  useStates,
+} from "./providers/MessageProvider";
+
+export default function ContactList() {
+  const contacts = useContacts();
+  const dispatch = useStateDispatch();
+  const state = useStates();
+
   return (
     <>
       <section className="contact-list">
@@ -13,7 +23,7 @@ export default function ContactList({ contacts, dispatch, selectedId }) {
                   })
                 }
                 className={
-                  selectedId == contact.id ? "beautifySelectedBttn" : ""
+                  state.selectedId == contact.id ? "beautifySelectedBttn" : ""
                 }
               >
                 {contact.name}
